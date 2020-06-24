@@ -316,9 +316,10 @@ namespace terminal
                     out << std::setw(style.m_width);
                     break;
                 case Aligment::Center:
+                    //BUG: Centering text is not working well
                     int padding = (style.m_width - style.m_view.length()) / 2;
                     if (padding > 0) {
-                        out << std::string(padding, ' ');
+                        out << std::string(padding, 'x');
                     }
                     break;
                 }
